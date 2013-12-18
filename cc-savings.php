@@ -4,7 +4,7 @@
 Plugin Name: CC Savings Calculator
 Plugin URI: http://savings.calculatorscanada.ca/widgets/
 Description: Simple Savings Calculator
-Version: 1.0
+Version: 1.0.1
 Author: Calculators Canada
 Author URI: http://calculatorscanada.ca/
 License: GPL2
