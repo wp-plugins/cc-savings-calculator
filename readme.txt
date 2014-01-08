@@ -1,5 +1,5 @@
 === CC Savings Calculator ===
-Contributors: CalculatorsCanada
+Contributors: CalculatorsCanada.ca
 Donate link: http://calculatorscanada.ca/
 Tags: investments, savings, savings calculator, interest, calculator, sidebar, widget, plugin, financial
 Requires at least: 3.0
