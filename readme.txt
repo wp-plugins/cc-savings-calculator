@@ -40,10 +40,10 @@ Please [contact us](http://calculatorscanada.ca/contact) if you have further que
 == Changelog ==
 
 = 1.0.2 = 
-* Contributors list updated
+* Fixed minor bug (Undefined variable)
 
 = 1.0.1 =
-* Minor bug fixes
+* Contributors list updated
 
 = 1.0.0 =
 * Initial Release
