@@ -4,12 +4,12 @@
 Plugin Name: CC Savings Calculator
 Plugin URI: http://savings.calculatorscanada.ca/widgets/
 Description: Simple Savings Calculator
-Version: 1.0.2
+Version: 1.1.0
 Author: Calculators Canada
 Author URI: http://calculatorscanada.ca/
 License: GPL2
 
-Copyright 2013 CalculatorsCanada.CA (info@calculatorscanada.ca)
+Copyright 2013-2014 CalculatorsCanada.CA (info@calculatorscanada.ca)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
@@ -114,7 +114,7 @@ class cc_savings extends WP_Widget {
 		echo $args['before_widget'];
 		if ( $allow_cc_urls && !empty($title))
 			 $title = '<a href="http://savings.calculatorscanada.ca" target="_blank" style="text-decoration:none">' . $title . '</a>';		
-		load_calc($title, $currency_symbol, $allow_cc_urls, $bg_color, $border_color, $text_color);
+		load_calc($this->id, $title, $currency_symbol, $allow_cc_urls, $bg_color, $border_color, $text_color);
 		echo $args['after_widget'];
 	}
 }

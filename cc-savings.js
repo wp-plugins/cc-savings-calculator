@@ -4,39 +4,43 @@ var $J = jQuery.noConflict();
 $J( document ).ready(function() {
 	// runtime events
 	
-	$J("#deposit").keydown(function(event) {
+	$J(".deposit").keydown(function(event) {
 		if(!(isIntegerKey(event))) event.preventDefault();
 		
 	});	
 
-	$J("#term").keydown(function(event) {
+	$J(".term").keydown(function(event) {
 		if(!(isIntegerKey(event))) event.preventDefault();
 		
 	});	
 
-	$J("#rate").keydown(function(event) {
-		//if(!(isIntegerKey(event))) event.preventDefault();
-        if(!(isDecimalKey(event,$J('#rate').val()))) event.preventDefault();
+	$J(".rate").keydown(function(event) {
+        if(!(isDecimalKey(event,this.value))) event.preventDefault();
 		
 	});	
 	
-	$J("#deposit").keyup(function( ) {
-		calculate();
+	$J(".deposit").keyup(function( ) {
+		calculate(get_id(this.id,"deposit"));
 	});
-	$J("#term").keyup(function( ) {
-		calculate();
+	$J(".term").keyup(function( ) {
+		calculate(get_id(this.id,"term"));
 	});
-	$J("#rate").keyup(function( ) {
-		calculate();
+	$J(".rate").keyup(function( ) {
+		calculate(get_id(this.id,"rate"));
 	});
 
 });
 
-function calculate()
+function get_id(long_id,fieldname)
 {
-	var deposit = $J('#deposit').val(),
-		term = $J('#term').val(),
-		rate = $J('#rate').val();
+    return long_id.substr(0, long_id.lastIndexOf(fieldname) - 1);
+};
+
+function calculate(id)
+{
+	var deposit = $J('#' + id + '-deposit').val(),
+		term = $J('#' + id + '-term').val(),
+		rate = $J('#' + id + '-rate').val();
 	
 	// if no data entered
 	if (isNaN(deposit)) return;
@@ -45,7 +49,7 @@ function calculate()
 	
 	var interestEarned = 0;
 	interestEarned = round2TwoDecimals(deposit * rate/100 * term);
-	$J('#interest').html('$' + interestEarned.toString());
+	$J('#' + id + '-interest').html('$' + interestEarned.toString());
 	   
 };
 
